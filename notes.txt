@@ -1,0 +1,8 @@
+Pasos para SWAP:
+
+- Verificar los argumentos: Que sean números (ints), permitiendo negativos, pasarlo por split, atoi, y ft_isdigit. LISTO 
+- Crear la lista, metiendo los argumentos en cada nodo (osea, los números), teniendo cualquier orden.
+- Verificar que no se repitan, si se repiten: CHAU.
+- Asignar un número a cada argumento, osea, indexarlo.
+- Evitar el overflow, si el número es más grande o pequeño de int.
+- Ordenar (programar los movimientos antes de) y ver resultado, mostrar en pantalla el ordenamiento. (pa, rb, rr, pb, ra... blablabla).
