@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 16:02:16 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/07/11 16:11:29 by wiljimen         ###   ########.fr       */
+/*   Updated: 2024/07/11 16:43:58 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,28 @@ void overflow_check(long n)
 		print_error("Overflow\n");
 }
 
-int	zero_control(char *argv)
+long	zero_control(char *argv)
 {
-	int	i;
-	int	sign;
+	long	i;
+	long	n;
+	int		sign;
 	
 	i = 0;
-	sign = 0;
-	while (argv[i])
+	sign = 1;
+	if (argv[i] == '-')
 	{
-		if (argv[i] == '-')
-			sign++;
-		while()
-			
+		sign *= -1;
+		i++;
 	}
+	while (argv[i] && argv[i] == '0')
+		i++;
+	n = ft_atol(argv + i);
+	return (n * sign);
+}
+
+long	control_long(long n, char *split_arg)
+{
+	n = zero_control(split_arg);
+	overflow_check(n);
+	return (n);
 }

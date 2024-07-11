@@ -1,6 +1,7 @@
 Pasos para SWAP:
 
 - Verificar los argumentos: Que sean números (ints), permitiendo negativos, pasarlo por split, atoi, y ft_isdigit. LISTO 
+- Para los duplicados, verificar los argumentos antes de todo, y luego hacer el stack :P.
 - Crear la lista, metiendo los argumentos en cada nodo (osea, los números), teniendo cualquier orden.
 - Verificar que no se repitan, si se repiten: CHAU.
 - Asignar un número a cada argumento, osea, indexarlo.
