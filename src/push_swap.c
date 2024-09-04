@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 15:51:23 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/07/24 19:00:16 by wiljimen         ###   ########.fr       */
+/*   Updated: 2024/09/04 08:31:39 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,14 @@ void	check_args(int argc, char **argv)
 int	main(int argc, char **argv)
 {
 	check_args(argc, argv);
-	t_list	**list;
-	int		i;
-
-	i = 1;
-	list = malloc(sizeof(t_list));
-	while (i < argc)
-	{
-		stack_creator(argv[i], list);
-		i++;
-	}
+	t_stack	*stacks;
 	
+	stacks = malloc(sizeof(t_stack));
+	stacks->stack_a = NULL;
+	stacks->stack_b = NULL;
+	stacks->stack_a = malloc(sizeof(t_list));
+	stacks->stack_b = malloc(sizeof(t_list));
+	stack_init(argc, argv, stacks->stack_a, stacks->stack_b);
+	return (0);
 	// print_list(list);
 }

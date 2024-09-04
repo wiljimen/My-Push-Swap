@@ -6,11 +6,11 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 19:00:42 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/07/24 19:21:00 by wiljimen         ###   ########.fr       */
+/*   Updated: 2024/08/14 17:24:21 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 void	push(t_list **stack_from, t_list **stack_dst)
 {
