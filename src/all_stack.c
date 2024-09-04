@@ -6,29 +6,61 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 16:48:34 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/09/04 08:38:46 by wiljimen         ###   ########.fr       */
+/*   Updated: 2024/09/04 09:46:51 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	stack_creator(char *argv, t_list **stack_a, int j)
+
+// void	stack_creator(char *argv, t_list **stack_a)
+// {
+// 	int		i;
+// 	char	**split_arg;
+// 	long	n;
+// 	t_list	*node;
+// 	int		*num;
+
+// 	i = 0;
+// 	split_arg = ft_split(argv, ' ');
+// 	n = ft_atol(split_arg[i]);
+// 	while(split_arg[i])
+// 	{
+// 		if (!n)
+// 			ft_free(split_arg, "Balloc");
+// 		num = malloc(sizeof(int));
+// 		n = control_long(n, split_arg[i]);
+// 		*num = (int)n;
+// 		node = ft_lstnew(num);
+// 		if (!node)
+// 			ft_free(split_arg, "Bad node");
+// 		ft_lstadd_back(stack_a, node);
+// 		ft_printf("Numero en nodo:%d\n", *(int *)(*stack_a)->content);
+// 		free(split_arg[i]);
+// 		i++;
+// 	}
+// 	free(split_arg);
+// }
+
+void	stack_creator(char *argv, t_list **stack_a)
 {
 	char	**split_arg;
 	long	n;
 	t_list	*node;
 	int		*num;
+	int		i;
 
+	i = 0;
 	split_arg = ft_split(argv, ' ');
-	n = ft_atol(split_arg[j]);
-	while (split_arg[j])
+	while (split_arg[i])
 	{
+		n = ft_atol(split_arg[i]);
 		if (!n)
 			ft_free(split_arg, "Bad malloc");
-		n = control_long(n, split_arg[j]);
+		n = control_long(n, split_arg[i]);
 		num = malloc(sizeof(int));
-		if (!num)
-			ft_free(split_arg, "Error num");
+		// if (!num)
+		// 	ft_free(split_arg, "Error num");
 		*num = (int)n;
 		node = ft_lstnew(num);
 		if (!node)
@@ -37,38 +69,27 @@ void	stack_creator(char *argv, t_list **stack_a, int j)
 			ft_free(split_arg, "Bad node");
 		}
 		ft_lstadd_back(stack_a, node);
-		free(split_arg[j]);
-		j++;
+		// ft_printf("Content: %d\n", *(int*)(*stack_a)->content);
+		free(split_arg[i]);
+		i++;
 	}
 	free(split_arg);
-}
-
-void	stack_push(t_list **stack_a, t_list **stack_b)
-{
-	if (stack_a == NULL || *stack_a == NULL)
-		return ;
-	t_list	*node;
-
-	node = *stack_a;
-	printf("Nodo en a: %d\n", *(int *)node->content);
-	*stack_a = (*stack_a)->next;
-    node->next = *stack_b;
-    *stack_b = node;
-	printf("Nodo en b: %d\n", *(int *)node->content);
 }
 
 void	stack_init(int argc, char **argv, t_list **stack_a, t_list **stack_b)
 {
 	int	i;
-	int	j;
 	
 	i = 1;
-	j = 0;
 	while (i < argc)
 	{
-		stack_creator(argv[i], stack_a, j);
+		stack_creator(argv[i], stack_a);
 		i++;
 	}
-	while(*stack_a != NULL)
-		stack_push(stack_a, stack_b);
+	if (!stack_a || !*stack_a)
+		return ;
+	print_list(stack_a, 'a');
+	while (*stack_a)
+		push(stack_a, stack_b);
+	print_list(stack_b, 'b');
 }

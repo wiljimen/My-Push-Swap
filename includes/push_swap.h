@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 14:52:22 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/09/04 08:24:41 by wiljimen         ###   ########.fr       */
+/*   Updated: 2024/09/04 09:46:42 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ typedef struct s_stack
 
 // STACKS
 
-void	stack_creator(char *argv, t_list **stack_a, int j);
+void	stack_creator(char *argv, t_list **stack_a);
 void	stack_init(int argc, char **argv, t_list **stack_a, t_list **stack_b);
-void	print_list(t_list *lst);
+void	print_list(t_list **lst, char c);
 void	free_stack(t_list **stack);
 
 // PARSE

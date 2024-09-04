@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 15:51:23 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/09/04 08:31:39 by wiljimen         ###   ########.fr       */
+/*   Updated: 2024/09/04 09:05:48 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,8 @@ int	main(int argc, char **argv)
 	t_stack	*stacks;
 	
 	stacks = malloc(sizeof(t_stack));
-	stacks->stack_a = NULL;
-	stacks->stack_b = NULL;
 	stacks->stack_a = malloc(sizeof(t_list));
 	stacks->stack_b = malloc(sizeof(t_list));
 	stack_init(argc, argv, stacks->stack_a, stacks->stack_b);
 	return (0);
-	// print_list(list);
 }

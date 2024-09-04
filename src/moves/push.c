@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 19:00:42 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/08/14 17:24:21 by wiljimen         ###   ########.fr       */
+/*   Updated: 2024/09/04 09:54:34 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ void	push(t_list **stack_from, t_list **stack_dst)
 	tmp = *stack_from;
 	*stack_from = (*stack_from)->next;
 	ft_lstadd_front(stack_dst, tmp);
-	ft_printf("%c", 'p');
+	ft_printf("p\n");
 }
