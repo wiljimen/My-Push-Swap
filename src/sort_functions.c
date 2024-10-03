@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   sort_functions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/02 16:58:31 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/09/11 16:55:28 by wiljimen         ###   ########.fr       */
+/*   Created: 2024/09/18 18:17:23 by wiljimen          #+#    #+#             */
+/*   Updated: 2024/09/18 18:26:57 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../includes/push_swap.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	get_min_index(t_list **stack)
 {
+	t_list	*current;
 	t_list	*tmp;
+	int		min_index;
 
-	tmp = lst[0];
-	lst[0] = new;
-	lst[0]->next = tmp;
+	current = *stack;
+	while (current)
+	{
+		tmp = *stack;
+		min_index = 0;
+		while(tmp)
+		{
+			if (*(int *)current->content > *(int *)tmp->content)
+				min_index++;
+			tmp = tmp->next;
+		}
+		current->index = min_index;
+		current = current->next;
+	}
 }

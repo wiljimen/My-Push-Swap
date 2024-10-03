@@ -10,8 +10,8 @@ CFLAGS = -Wall -Wextra -Werror -g3
 
 RM = rm -f
 		
-SRCS = src/push_swap.c src/ft_utils.c src/check_numbers.c src/all_stack.c \
-		src/moves/push.c src/moves/rotate.c src/moves/swap.c \
+SRCS = src/push_swap.c src/ft_utils.c src/check_numbers.c src/stack_manager.c \
+		src/moves/push.c src/moves/rotate.c src/moves/swap.c src/sort_functions.c\
 
 OBJS = $(SRCS:.c=.o)
 

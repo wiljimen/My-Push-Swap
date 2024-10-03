@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   all_stack.c                                        :+:      :+:    :+:   */
+/*   stack_manager.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 16:48:34 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/09/04 09:46:51 by wiljimen         ###   ########.fr       */
+/*   Updated: 2024/10/03 09:51:39 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,10 @@ void	stack_creator(char *argv, t_list **stack_a)
 	while (split_arg[i])
 	{
 		n = ft_atol(split_arg[i]);
-		if (!n)
-			ft_free(split_arg, "Bad malloc");
 		n = control_long(n, split_arg[i]);
 		num = malloc(sizeof(int));
-		// if (!num)
-		// 	ft_free(split_arg, "Error num");
+		if (!num)
+			ft_free(split_arg, "Error num");
 		*num = (int)n;
 		node = ft_lstnew(num);
 		if (!node)
@@ -69,27 +67,45 @@ void	stack_creator(char *argv, t_list **stack_a)
 			ft_free(split_arg, "Bad node");
 		}
 		ft_lstadd_back(stack_a, node);
-		// ft_printf("Content: %d\n", *(int*)(*stack_a)->content);
 		free(split_arg[i]);
+		free(num);
 		i++;
 	}
 	free(split_arg);
 }
 
+void	print_list_index(t_list **list)
+{
+    t_list *current = *list;
+
+    while (current != NULL)
+    {
+        ft_printf("Index: %d\n", current->index);
+        current = current->next;
+    }
+}
+
+
 void	stack_init(int argc, char **argv, t_list **stack_a, t_list **stack_b)
 {
+	t_list	**stack_a;
+	t_list	**stack_b;
 	int	i;
 	
 	i = 1;
+	(void)stack_b;
 	while (i < argc)
 	{
 		stack_creator(argv[i], stack_a);
 		i++;
 	}
-	if (!stack_a || !*stack_a)
-		return ;
-	print_list(stack_a, 'a');
-	while (*stack_a)
-		push(stack_a, stack_b);
-	print_list(stack_b, 'b');
+	get_min_index(stack_a);
+	print_list_index(stack_a);
+	// if (!stack_a || !*stack_a)
+	// 	return ;
+	// print_list(stack_a, 'a');
+	// while (*stack_a)
+	// 	push(stack_a, stack_b, 'a');
+	// print_list(stack_b, 'b');
+	// print_list(stack_a, 'a');
 }

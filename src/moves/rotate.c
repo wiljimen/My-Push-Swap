@@ -6,13 +6,13 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 17:14:55 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/09/03 14:34:08 by wiljimen         ###   ########.fr       */
+/*   Updated: 2024/09/18 18:43:39 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	rotate(t_list **stack_from, char chr)
+void	rotate(t_list **stack_from, char *str)
 {
 	t_list	*first;
 	t_list	*second;
@@ -24,16 +24,16 @@ void	rotate(t_list **stack_from, char chr)
 	ft_lstadd_back(stack_from, first);
 	first->next = NULL;
 	*stack_from = second;
-	ft_printf("%c", chr);
+	ft_printf("%s", str);
 }
 
-void	ft_rr(t_list **stack_a, t_list **stack_b)
+void	rotate_r(t_list **stack_a, t_list **stack_b)
 {
-	rotate(stack_a, 'r');
-	rotate(stack_b, 'r');
+	rotate(stack_a, "r");
+	rotate(stack_b, "r");
 }
 
-void	rrotate(t_list **stack_from, char chr)
+void	rev_rotate(t_list **stack_from, char *str)
 {
 	t_list	*first;
 	t_list	*last_node;
@@ -48,7 +48,14 @@ void	rrotate(t_list **stack_from, char chr)
 		pre_last_node = pre_last_node->next;
 	ft_lstadd_front(stack_from, last_node);
 	pre_last_node->next = NULL;
-	ft_printf("%c", chr);
+	ft_printf("%s\n", str);
+}
+
+void	rev_rr(t_list **stack_a, t_list **stack_b)
+{
+	rev_rotate(stack_a, "r");
+	rev_rotate(stack_b, "r");
+	ft_printf("rrr\n");
 }
 
 // // Función para crear un nuevo nodo de la lista

@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 14:52:22 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/09/04 09:46:42 by wiljimen         ###   ########.fr       */
+/*   Updated: 2024/09/18 18:47:24 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@
 # include <sys/wait.h>
 # include <stdbool.h>
 
-
 typedef struct s_stack
 {
 	t_list	**stack_b;
 	t_list	**stack_a;
+	
 }			t_stack;
 
 // STACKS
@@ -45,11 +45,14 @@ bool	has_duplicates(int argc, char **argv);
 
 // MOVES
 
-void	push(t_list **stack_from, t_list **stack_dst);
-void	swap(t_list **stack_from);
-void	rotate(t_list **stack_from, char chr);
-void	rrotate(t_list **stack_from, char chr);
+void	push(t_list **stack_from, t_list **stack_dst, char c);
+void	swap(t_list **stack_from, char c);
+void	rotate(t_list **stack_from, char *str);
+void	rev_rotate(t_list **stack_from, char *str);
 void	ft_rr(t_list **stack_a, t_list **stack_b);
 
+// ALGORITHM
+
+void	get_min_index(t_list **stack);
 
 #endif
