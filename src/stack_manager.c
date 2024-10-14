@@ -95,6 +95,11 @@ void	stack_init(int argc, char **argv, t_list **stack_a)
 		stack_creator(argv[i], stack_a);
 		i++;
 	}
-	get_min_index(stack_a);
-	print_list_index(stack_a);
+	printf("Antes de ordenar");
+	print_list(stack_a, 'a');
+	//get_min_index(stack_a);
+	//print_list_index(stack_a);
+	printf("Después de ordenar");
+	sort_three_num(stack_a);
+	print_list(stack_a, 'a');
 }

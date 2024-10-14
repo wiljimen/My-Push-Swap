@@ -46,13 +46,14 @@ bool	has_duplicates(int argc, char **argv);
 // MOVES
 
 void	push(t_list **stack_from, t_list **stack_dst, char c);
-void	swap(t_list **stack_from, char c);
-void	rotate(t_list **stack_from, char *str);
-void	rev_rotate(t_list **stack_from, char *str);
+void	swap(t_list **stack, char c);
+void	rotate(t_list **stack, char *str);
+void	rev_rotate(t_list **stack, char *str);
 void	ft_rr(t_list **stack_a, t_list **stack_b);
 
 // ALGORITHM
 
 void	get_min_index(t_list **stack);
+void	sort_three_num(t_list **stack);
 
 #endif

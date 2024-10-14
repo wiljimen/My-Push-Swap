@@ -12,19 +12,19 @@
 
 #include "../../includes/push_swap.h"
 
-void	rotate(t_list **stack_from, char *str)
+void	rotate(t_list **stack, char *str)
 {
 	t_list	*first;
 	t_list	*second;
 
-	if (!stack_from || !*stack_from || !(*stack_from)->next)
+	if (!stack || !*stack || !(*stack)->next)
         return;
-	first = *stack_from;
-	second = (*stack_from)->next;
-	ft_lstadd_back(stack_from, first);
+	first = *stack;
+	second = (*stack)->next;
+	ft_lstadd_back(stack, first);
 	first->next = NULL;
-	*stack_from = second;
-	ft_printf("%s", str);
+	*stack = second;
+	ft_printf("%s\n", str);
 }
 
 void	rotate_r(t_list **stack_a, t_list **stack_b)
@@ -33,20 +33,20 @@ void	rotate_r(t_list **stack_a, t_list **stack_b)
 	rotate(stack_b, "r");
 }
 
-void	rev_rotate(t_list **stack_from, char *str)
+void	rev_rotate(t_list **stack, char *str)
 {
 	t_list	*first;
 	t_list	*last_node;
 	t_list	*pre_last_node;
 	
-	if (!stack_from || !*stack_from || !(*stack_from)->next)
+	if (!stack || !*stack || !(*stack)->next)
         return;
-	first = *stack_from;
+	first = *stack;
 	last_node = ft_lstlast(first);
 	pre_last_node = first;
 	while(pre_last_node->next->next)
 		pre_last_node = pre_last_node->next;
-	ft_lstadd_front(stack_from, last_node);
+	ft_lstadd_front(stack, last_node);
 	pre_last_node->next = NULL;
 	ft_printf("%s\n", str);
 }

@@ -12,19 +12,19 @@
 
 #include "../../includes/push_swap.h"
 
-void	swap(t_list **stack_from, char c)
+void	swap(t_list **stack, char c)
 {
 	t_list	*first;
 	t_list	*second;
 
-	if (!*stack_from || (*stack_from)->next == NULL)
+	if (!*stack || (*stack)->next == NULL)
 		return;
-	first = *stack_from;
-	second = (*stack_from)->next;
+	first = *stack;
+	second = (*stack)->next;
 	first->next = second->next;
 	second->next = first;
-	*stack_from = second;
-	printf("s%c\n", c);
+	*stack = second;
+	ft_printf("s%c\n", c);
 }
 
 void	ss(t_list **stack_a, t_list **stack_b)

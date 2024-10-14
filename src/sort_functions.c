@@ -33,3 +33,33 @@ void	get_min_index(t_list **stack)
 		current = current->next;
 	}
 }
+
+void	sort_three_num(t_list **stack)
+{
+	t_list	*aux;
+	int		f;
+	int		s;
+	int		t;
+
+	aux = *stack;
+	f = *((int *)aux->content);
+	s = *((int *)aux->next->content);
+	t = *((int *)aux->next->next->content);
+
+	if (f > s && s > t)
+	{
+		swap(stack, 'a');
+		rev_rotate(stack, "sa");
+	}
+	else if (f > t && t > s)
+	{
+		swap(stack, 'a');
+		rotate(stack, "a");
+	}
+	else if (t < f && f > s)
+		rotate(stack, "a");
+	else if ((f > s) && (s < t) && (t > f))
+		swap(stack, 'a');
+	else if ((f < s) && (s > t) && (t > f))
+		rev_rotate(stack, "sa");
+}
