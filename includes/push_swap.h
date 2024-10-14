@@ -29,7 +29,7 @@ typedef struct s_stack
 // STACKS
 
 void	stack_creator(char *argv, t_list **stack_a);
-void	stack_init(int argc, char **argv, t_list **stack_a, t_list **stack_b);
+void	stack_init(int argc, char **argv, t_list **stack_a);
 void	print_list(t_list **lst, char c);
 void	free_stack(t_list **stack);
 

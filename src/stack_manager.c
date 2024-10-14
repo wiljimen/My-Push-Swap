@@ -68,7 +68,6 @@ void	stack_creator(char *argv, t_list **stack_a)
 		}
 		ft_lstadd_back(stack_a, node);
 		free(split_arg[i]);
-		free(num);
 		i++;
 	}
 	free(split_arg);
@@ -86,14 +85,11 @@ void	print_list_index(t_list **list)
 }
 
 
-void	stack_init(int argc, char **argv, t_list **stack_a, t_list **stack_b)
+void	stack_init(int argc, char **argv, t_list **stack_a)
 {
-	t_list	**stack_a;
-	t_list	**stack_b;
 	int	i;
 	
 	i = 1;
-	(void)stack_b;
 	while (i < argc)
 	{
 		stack_creator(argv[i], stack_a);
@@ -101,11 +97,4 @@ void	stack_init(int argc, char **argv, t_list **stack_a, t_list **stack_b)
 	}
 	get_min_index(stack_a);
 	print_list_index(stack_a);
-	// if (!stack_a || !*stack_a)
-	// 	return ;
-	// print_list(stack_a, 'a');
-	// while (*stack_a)
-	// 	push(stack_a, stack_b, 'a');
-	// print_list(stack_b, 'b');
-	// print_list(stack_a, 'a');
 }

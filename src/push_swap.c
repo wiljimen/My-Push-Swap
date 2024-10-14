@@ -47,6 +47,6 @@ int	main(int argc, char **argv)
 	stacks = malloc(sizeof(t_stack));
 	stacks->stack_a = malloc(sizeof(t_list));
 	stacks->stack_b = malloc(sizeof(t_list));
-	stack_init(argc, argv, stacks->stack_a, stacks->stack_b);
+	stack_init(argc, argv, stacks->stack_a);
 	return (0);
 }
