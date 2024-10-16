@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 14:52:22 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/09/18 18:47:24 by wiljimen         ###   ########.fr       */
+/*   Updated: 2024/10/16 18:51:38 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void	ft_rr(t_list **stack_a, t_list **stack_b);
 
 // ALGORITHM
 
+int		is_stack_sorted(t_list **stack);
 void	get_min_index(t_list **stack);
 void	sort_three_num(t_list **stack);
 

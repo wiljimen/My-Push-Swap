@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 15:15:04 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/09/11 17:21:18 by wiljimen         ###   ########.fr       */
+/*   Updated: 2024/10/16 18:29:49 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	ft_isspace(int c)
 void	print_list(t_list **lst, char c)
 {
 	t_list	*current;
-	
+
 	if (!lst || !*lst)
 	{
 		ft_printf("Stack %c empty", c);
@@ -52,26 +52,10 @@ void	print_list(t_list **lst, char c)
 	}
 	ft_printf("Stack %c\n", c);
 	current = *lst;
-    while (current != NULL)
+	while (current != NULL)
 	{
-        ft_printf("Content: %d\n", *(int*)current->content);
-        current = current->next;
-    }
+		ft_printf("Content: %d\n", *(int*)current->content);
+		current = current->next;
+	}
 	ft_printf("\n");
 }
-
-// void	free_stack(t_list **stack)
-// {
-// 	t_list	*temp;
-// 	t_list	*next;
-
-// 	temp = *stack;
-// 	while (temp)
-// 	{
-// 		next = temp->next;
-// 		free(temp->content);
-// 		free(temp);
-// 		temp = next;
-// 	}
-// 	*stack = NULL;
-// }

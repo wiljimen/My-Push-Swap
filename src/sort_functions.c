@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 18:17:23 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/09/18 18:26:57 by wiljimen         ###   ########.fr       */
+/*   Updated: 2024/10/16 18:51:45 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ void	sort_three_num(t_list **stack)
 	f = *((int *)aux->content);
 	s = *((int *)aux->next->content);
 	t = *((int *)aux->next->next->content);
-
 	if (f > s && s > t)
 	{
 		swap(stack, 'a');
@@ -62,4 +61,18 @@ void	sort_three_num(t_list **stack)
 		swap(stack, 'a');
 	else if ((f < s) && (s > t) && (t > f))
 		rev_rotate(stack, "sa");
+}
+
+int	is_stack_sorted(t_list **stack)
+{
+	t_list	*node;
+
+	node = *stack;
+	while (node && node->next)
+	{
+		if (*(int *)node->content > *(int *)node->next->content)
+			return (0);
+		node = node->next;
+	}
+	return (1);
 }
