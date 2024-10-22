@@ -12,28 +12,6 @@
 
 #include "../includes/push_swap.h"
 
-void	get_min_index(t_list **stack)
-{
-	t_list	*current;
-	t_list	*tmp;
-	int		min_index;
-
-	current = *stack;
-	while (current)
-	{
-		tmp = *stack;
-		min_index = 0;
-		while(tmp)
-		{
-			if (*(int *)current->content > *(int *)tmp->content)
-				min_index++;
-			tmp = tmp->next;
-		}
-		current->index = min_index;
-		current = current->next;
-	}
-}
-
 void	sort_three_num(t_list **stack)
 {
 	t_list	*aux;
@@ -75,4 +53,38 @@ int	is_stack_sorted(t_list **stack)
 		node = node->next;
 	}
 	return (1);
+}
+
+void	mini_sort(t_list **stack_a, t_list **stakc_b, int index, int size)
+{
+	t_list	*temp;
+	int		ind;
+
+	ind = 0;
+	temp = *stack_a;
+	while(temp)
+	{
+		if (temp->index == index)
+		{
+			if (ind = 2)
+				rotate(stack_a, 'a');
+			else if (ind == 1 || ind == 2)
+				swap(stack_a, 'a');
+			else if (ind == 3)
+				rev_rotate(stack_a, 'a');
+			else if ((ind == 4 || ind == 3) && index == 0 && size != 4)
+				rev_rotate(stack_a, 'a');
+			push(stack_a, stack_b, 'b');
+			break ;
+		}
+		ind++;
+		temp = temp->next;
+	}
+}
+
+void	sort_four_num(t_list **stack_a, t_list **stack_b)
+{
+	mini_sort(stack_a, stack_b, 0, 4);
+	sort_three_num(stack_a);
+	push(stack_b, stack_a, 'a');
 }

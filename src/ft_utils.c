@@ -59,3 +59,25 @@ void	print_list(t_list **lst, char c)
 	}
 	ft_printf("\n");
 }
+
+void	get_min_index(t_list **stack)
+{
+	t_list	*current;
+	t_list	*tmp;
+	int		min_index;
+
+	current = *stack;
+	while (current)
+	{
+		tmp = *stack;
+		min_index = 0;
+		while(tmp)
+		{
+			if (*(int *)current->content > *(int *)tmp->content)
+				min_index++;
+			tmp = tmp->next;
+		}
+		current->index = min_index;
+		current = current->next;
+	}
+}

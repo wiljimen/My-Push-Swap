@@ -56,5 +56,7 @@ void	ft_rr(t_list **stack_a, t_list **stack_b);
 int		is_stack_sorted(t_list **stack);
 void	get_min_index(t_list **stack);
 void	sort_three_num(t_list **stack);
+void	mini_sort(t_list **stack_a, t_list **stakc_b, int index, int size);
+void	sort_four_num(t_list **stack_a, t_list **stack_b);
 
 #endif
