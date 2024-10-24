@@ -6,11 +6,19 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 15:51:23 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/10/16 18:32:22 by wiljimen         ###   ########.fr       */
+/*   Updated: 2024/10/24 18:32:05 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+int	ft_isspace(int c)
+{
+	if (c == ' ' || c == '\f' || c == '\n' || c == '\r'
+		|| c == '\t' || c == '\v')
+		return (1);
+	return (0);
+}
 
 void	check_args(int argc, char **argv)
 {
@@ -41,12 +49,20 @@ void	check_args(int argc, char **argv)
 
 int	main(int argc, char **argv)
 {
-	t_stack	*stacks;
+	t_list	*stack_a;
+	t_list	*stack_b;
 
+	stack_a = NULL;
+	stack_b = NULL;
 	check_args(argc, argv);
-	stacks = malloc(sizeof(t_stack));
-	stacks->stack_a = malloc(sizeof(t_list));
-	stacks->stack_b = malloc(sizeof(t_list));
-	stack_init(argc, argv, stacks->stack_a);
+	if (argc > 2)
+		stack_init(argc, argv, &stack_a);
+	else
+		return (0);
+	ft_printf("\nAntes de ordenar\n\n");
+	print_list(&stack_a, 'a');
+	principal_sort(&stack_a, &stack_b);
+	ft_printf("\nDespues de ordenar\n\n");
+	print_list(&stack_a, 'a');
 	return (0);
 }

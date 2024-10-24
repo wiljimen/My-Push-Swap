@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 16:48:34 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/10/03 09:51:39 by wiljimen         ###   ########.fr       */
+/*   Updated: 2024/10/24 18:31:22 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,9 @@ void	stack_creator(char *argv, t_list **stack_a)
 
 void	print_list_index(t_list **list)
 {
-    t_list *current = *list;
-
+    t_list *current;
+	
+	current = *list;
     while (current != NULL)
     {
         ft_printf("Index: %d\n", current->index);
@@ -95,11 +96,22 @@ void	stack_init(int argc, char **argv, t_list **stack_a)
 		stack_creator(argv[i], stack_a);
 		i++;
 	}
-	printf("Antes de ordenar");
-	print_list(stack_a, 'a');
-	//get_min_index(stack_a);
-	//print_list_index(stack_a);
-	printf("Después de ordenar");
-	sort_three_num(stack_a);
-	print_list(stack_a, 'a');
 }
+
+void	principal_sort(t_list **stack_a, t_list **stack_b)
+{
+	int	num;
+	num = ft_lstsize(*stack_a);
+	get_min_index(stack_a);
+	print_list_index(stack_a);
+	if (!is_stack_sorted(stack_a))
+	{
+		if (num == 2)
+			swap(stack_a, 'a');
+		else if (num == 3)
+			sort_three_num(stack_a);
+		else if (num == 4)
+			sort_four_num(stack_a, stack_b);
+	}
+}
+

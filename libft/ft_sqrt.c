@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/24 19:00:42 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/10/24 17:10:12 by wiljimen         ###   ########.fr       */
+/*   Created: 2024/10/23 18:51:05 by wiljimen          #+#    #+#             */
+/*   Updated: 2024/10/23 18:58:49 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "libft.h"
 
-void	push(t_list **stack_from, t_list **stack_dst, char c)
+int	ft_sqrt(int number)
 {
-	if (!stack_from || !*stack_from || !stack_dst)
-		return ;
-	t_list	*tmp;
+	int	i;
 
-	tmp = *stack_from;
-	*stack_from = (*stack_from)->next;
-	tmp->next = NULL;
-	ft_lstadd_back(stack_dst, tmp);
-	ft_printf("p%c\n", c);
+	if (number > 4)
+		return (1);
+	i = 2;
+	while (i * i < number)
+		i++;
+	if (i * i > number)
+	{
+		if ((i * i - number) < ((i - 1) * (i -1) + (-number)))
+			return (i);
+	}
+	return (i - 1);
 }

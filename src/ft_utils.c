@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 15:15:04 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/10/16 18:29:49 by wiljimen         ###   ########.fr       */
+/*   Updated: 2024/10/24 18:07:23 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,10 @@ void	print_error(char *str)
 	exit(EXIT_FAILURE);
 }
 
-int	ft_isspace(int c)
+void	print_success(char *str)
 {
-	if (c == ' ' || c == '\f' || c == '\n' || c == '\r'
-		|| c == '\t' || c == '\v')
-		return (1);
-	return (0);
+	ft_printf(str);
+	exit(EXIT_FAILURE);
 }
 
 void	print_list(t_list **lst, char c)
@@ -54,7 +52,7 @@ void	print_list(t_list **lst, char c)
 	current = *lst;
 	while (current != NULL)
 	{
-		ft_printf("Content: %d\n", *(int*)current->content);
+		ft_printf("%d\n", *(int*)current->content);
 		current = current->next;
 	}
 	ft_printf("\n");

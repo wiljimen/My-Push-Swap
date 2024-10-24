@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 17:58:14 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/09/02 18:34:35 by wiljimen         ###   ########.fr       */
+/*   Updated: 2024/10/23 18:59:08 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int		ft_isalpha(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
+int		ft_sqrt(int number);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memset(void *string, int c, size_t len);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);

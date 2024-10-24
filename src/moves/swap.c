@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 17:21:05 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/09/18 18:43:53 by wiljimen         ###   ########.fr       */
+/*   Updated: 2024/10/24 17:09:38 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ void	swap(t_list **stack, char c)
 	first->next = second->next;
 	second->next = first;
 	*stack = second;
-	ft_printf("s%c\n", c);
+	if (c == 'a')
+		ft_printf("sa\n");
+	else if (c == 'b')
+		ft_printf("sb\n");
 }
 
 void	ss(t_list **stack_a, t_list **stack_b)
