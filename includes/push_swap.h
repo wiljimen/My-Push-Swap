@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 14:52:22 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/10/24 18:19:42 by wiljimen         ###   ########.fr       */
+/*   Updated: 2024/10/29 17:08:41 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_stack
 void	stack_creator(char *argv, t_list **stack_a);
 void	stack_init(int argc, char **argv, t_list **stack_a);
 void	print_list(t_list **lst, char c);
+void	print_list_index(t_list **list);
 void	free_stack(t_list **stack);
 
 // PARSE
@@ -57,7 +58,7 @@ void	ft_rr(t_list **stack_a, t_list **stack_b);
 int		is_stack_sorted(t_list **stack);
 void	get_min_index(t_list **stack);
 void	sort_three_num(t_list **stack);
-void	sort_aux(t_list **stack_a, t_list **stack_b, int index, int size);
+void	sort_aux(t_list **stack_a, t_list **stack_b, int index);
 void	sort_four_num(t_list **stack_a, t_list **stack_b);
 void	principal_sort(t_list **stack_a, t_list **stack_b);
 

@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 16:48:34 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/10/24 18:31:22 by wiljimen         ###   ########.fr       */
+/*   Updated: 2024/10/24 20:21:16 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,8 +102,8 @@ void	principal_sort(t_list **stack_a, t_list **stack_b)
 {
 	int	num;
 	num = ft_lstsize(*stack_a);
+	printf("num:%d\n\n", num);
 	get_min_index(stack_a);
-	print_list_index(stack_a);
 	if (!is_stack_sorted(stack_a))
 	{
 		if (num == 2)
