@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 16:48:34 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/10/24 20:21:16 by wiljimen         ###   ########.fr       */
+/*   Updated: 2024/10/30 02:05:16 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,8 @@ void	principal_sort(t_list **stack_a, t_list **stack_b)
 			sort_three_num(stack_a);
 		else if (num == 4)
 			sort_four_num(stack_a, stack_b);
+		else if (num == 5)
+			sort_five_num(stack_a, stack_b);
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 16:02:16 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/07/24 19:00:00 by wiljimen         ###   ########.fr       */
+/*   Updated: 2024/10/29 19:42:12 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	overflow_check(long n)
 {
 	if (n > INT_MAX || n < INT_MIN)
-		print_error("Overflow\n");
+		print_error("Error\n");
 }
 
 long	zero_control(char *argv)
