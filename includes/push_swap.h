@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 14:52:22 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/10/30 02:05:05 by wiljimen         ###   ########.fr       */
+/*   Updated: 2024/11/14 14:34:52 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_stack
 
 // STACKS
 
+void	node_to_stack(t_list **stack_a, int number, char **split_arg);
 void	stack_creator(char *argv, t_list **stack_a);
 void	stack_init(int argc, char **argv, t_list **stack_a);
 void	print_list(t_list **lst, char c);
@@ -38,7 +39,8 @@ void	free_stack(t_list **stack);
 
 void	check_args(int argc, char **argv);
 void	print_error(char *str);
-void	ft_free(char **map, char *str);
+void	free_arr(char **map, char *str);
+void	free_all(char **argv, t_list **stack, char *str);
 void	overflow_check(long n);
 int		ft_isspace(int c);
 long	control_long(long n, char *split_arg);
@@ -62,5 +64,8 @@ void	sort_aux(t_list **stack_a, t_list **stack_b, int index);
 void	sort_four_num(t_list **stack_a, t_list **stack_b);
 void	sort_five_num(t_list **stack_a, t_list **stack_b);
 void	principal_sort(t_list **stack_a, t_list **stack_b);
+int		count_rotations(t_list *stack, int max_index);
+void	great_sort_aux(t_list **stack_a, t_list **stack_b, int num);
+void	great_sort(t_list **stack_a, t_list **stack_b, int num);
 
 #endif

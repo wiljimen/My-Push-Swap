@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 15:51:23 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/10/24 18:32:05 by wiljimen         ###   ########.fr       */
+/*   Updated: 2024/11/14 14:11:40 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,10 @@ int	main(int argc, char **argv)
 		return (0);
 	ft_printf("\nAntes de ordenar\n\n");
 	print_list(&stack_a, 'a');
+	print_list(&stack_b, 'b');
 	principal_sort(&stack_a, &stack_b);
 	ft_printf("\nDespues de ordenar\n\n");
 	print_list(&stack_a, 'a');
+	print_list(&stack_b, 'b');
 	return (0);
 }

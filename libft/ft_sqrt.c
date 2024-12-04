@@ -6,11 +6,11 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 18:51:05 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/10/23 18:58:49 by wiljimen         ###   ########.fr       */
+/*   Updated: 2024/11/14 13:48:15 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 int	ft_sqrt(int number)
 {

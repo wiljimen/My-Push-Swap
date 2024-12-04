@@ -6,13 +6,13 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 15:15:04 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/10/24 18:07:23 by wiljimen         ###   ########.fr       */
+/*   Updated: 2024/11/14 14:21:49 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_free(char **argv, char *str)
+void	free_arr(char **argv, char *str)
 {
 	int	i;
 
@@ -45,7 +45,7 @@ void	print_list(t_list **lst, char c)
 
 	if (!lst || !*lst)
 	{
-		ft_printf("Stack %c empty", c);
+		ft_printf("Stack %c empty\n", c);
 		return ;
 	}
 	ft_printf("Stack %c\n", c);

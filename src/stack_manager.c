@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 16:48:34 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/10/30 02:05:16 by wiljimen         ###   ########.fr       */
+/*   Updated: 2024/11/14 14:37:54 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,32 +41,59 @@
 // 	}
 // 	free(split_arg);
 // }
+void	free_all(char **argv, t_list **stack, char *str)
+{
+	int	i;
+
+	i = 0;
+	while (argv[i])
+	{
+		free(argv[i]);
+		i++;
+	}
+	free(argv);
+	if (stack && *stack)
+		ft_lstclear(stack, free);
+	ft_putstr_fd(str, 1);
+	exit(EXIT_FAILURE);
+}
+
+void	node_to_stack(t_list **stack_a, int number, char **split_arg)
+{
+	int		*num;
+	t_list	*node;
+
+	num = malloc(sizeof(int));
+	if (!num)
+	{
+		free(num);
+		free_all(split_arg, stack_a, "Error num");
+	}
+	*num = number;
+	node = ft_lstnew(num);
+	if (!node)
+	{
+		free(num);
+		free_all(split_arg, stack_a, "Bad node");
+	}
+	ft_lstadd_back(stack_a, node);
+}
 
 void	stack_creator(char *argv, t_list **stack_a)
 {
 	char	**split_arg;
 	long	n;
-	t_list	*node;
-	int		*num;
 	int		i;
 
 	i = 0;
 	split_arg = ft_split(argv, ' ');
+	if (!split_arg)
+		free_all(NULL, stack_a, "Error split_arg");
 	while (split_arg[i])
 	{
 		n = ft_atol(split_arg[i]);
 		n = control_long(n, split_arg[i]);
-		num = malloc(sizeof(int));
-		if (!num)
-			ft_free(split_arg, "Error num");
-		*num = (int)n;
-		node = ft_lstnew(num);
-		if (!node)
-		{
-			free(num);
-			ft_free(split_arg, "Bad node");
-		}
-		ft_lstadd_back(stack_a, node);
+		node_to_stack(stack_a, (int)n, split_arg);
 		free(split_arg[i]);
 		i++;
 	}
@@ -102,7 +129,6 @@ void	principal_sort(t_list **stack_a, t_list **stack_b)
 {
 	int	num;
 	num = ft_lstsize(*stack_a);
-	printf("num:%d\n\n", num);
 	get_min_index(stack_a);
 	if (!is_stack_sorted(stack_a))
 	{
@@ -114,6 +140,8 @@ void	principal_sort(t_list **stack_a, t_list **stack_b)
 			sort_four_num(stack_a, stack_b);
 		else if (num == 5)
 			sort_five_num(stack_a, stack_b);
+		else
+			great_sort(stack_a, stack_b, num);
 	}
 }
 
