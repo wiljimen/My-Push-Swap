@@ -26,29 +26,31 @@ int	is_stack_sorted(t_list **stack)
 	return (1);
 }
 
-void sort_aux(t_list **stack_a, t_list **stack_b, int index)
+void sort_aux(t_list **stack_a, t_list **stack_b, int index, int num)
 {
-    t_list  *temp;
-    int     position;
-    temp = *stack_a;
-    position = 0;
-    while (temp && temp->index != index)
-    {
-        position++;
-        temp = temp->next;
-    }
-    if (position <= ft_lstsize(*stack_a) / 2)
-    {
-        while (position-- > 0)
-            rotate(stack_a, 'a');
-    }
-    else
-    {
-        position = ft_lstsize(*stack_a) - position;
-        while (position-- > 0)
-            rev_rotate(stack_a, 'a');
-    }
-    push(stack_a, stack_b, 'b');
+	t_list	*temp;
+	int		i;
+
+	i = 0;
+	temp = *stack_a;
+	while (temp)
+	{
+		if (temp->index == index)
+		{
+			if (i == 2)
+				rotate(stack_a, 'a');
+			if (i == 1 || i == 2)
+				swap(stack_a, 'a');
+			if (i == 3)
+				rev_rotate(stack_a, 'a');
+			if ((i == 4 || i == 3) && index == 0 && cap != 4)
+				rev_rotate(stack_a, 'a');
+			push(stack_a, stack_b, 'b');
+			break ;
+		}
+		i++;
+		temp = temp->next;
+	}
 }
 
 void	sort_three_num(t_list **stack)
@@ -83,15 +85,15 @@ void	sort_three_num(t_list **stack)
 
 void	sort_four_num(t_list **stack_a, t_list **stack_b)
 {
-	sort_aux(stack_a, stack_b, 0);
+	sort_aux(stack_a, stack_b, 0, 4);
 	sort_three_num(stack_a);
 	push(stack_b, stack_a, 'a');
 }
 
 void	sort_five_num(t_list **stack_a, t_list **stack_b)
 {
-	sort_aux(stack_a, stack_b, 0);
-	sort_aux(stack_a, stack_b, 1);
+	sort_aux(stack_a, stack_b, 0, 5);
+	sort_aux(stack_a, stack_b, 1, 5);
 	sort_three_num(stack_a);
 	push(stack_b, stack_a, 'a');
 	push(stack_b, stack_a, 'a');

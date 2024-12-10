@@ -60,7 +60,7 @@ void	ft_rr(t_list **stack_a, t_list **stack_b);
 int		is_stack_sorted(t_list **stack);
 void	get_min_index(t_list **stack);
 void	sort_three_num(t_list **stack);
-void	sort_aux(t_list **stack_a, t_list **stack_b, int index);
+void	sort_aux(t_list **stack_a, t_list **stack_b, int index, int num);
 void	sort_four_num(t_list **stack_a, t_list **stack_b);
 void	sort_five_num(t_list **stack_a, t_list **stack_b);
 void	principal_sort(t_list **stack_a, t_list **stack_b);
