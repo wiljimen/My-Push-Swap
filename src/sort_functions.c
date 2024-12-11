@@ -33,24 +33,24 @@ void sort_aux(t_list **stack_a, t_list **stack_b, int index, int num)
 
 	i = 0;
 	temp = *stack_a;
-	while (temp)
+	while (temp && temp->index != index)
 	{
-		if (temp->index == index)
-		{
-			if (i == 2)
-				rotate(stack_a, 'a');
-			if (i == 1 || i == 2)
-				swap(stack_a, 'a');
-			if (i == 3)
-				rev_rotate(stack_a, 'a');
-			if ((i == 4 || i == 3) && index == 0 && cap != 4)
-				rev_rotate(stack_a, 'a');
-			push(stack_a, stack_b, 'b');
-			break ;
-		}
-		i++;
 		temp = temp->next;
+		i++;
 	}
+	if (i == 1)
+		swap(stack_a, 'a');
+	else if (i == 2)
+		rotate(stack_a, 'a');
+	else if (i == 3)
+		rev_rotate(stack_a 'a');
+	else if (i == 4)
+	{
+		rev_rotate(stack_a, 'a');
+		if (index == 0 && num != 4)
+			rev_rotate(stack_a, 'a');
+	}
+	push(stack_a, stack_b, 'b');
 }
 
 void	sort_three_num(t_list **stack)
