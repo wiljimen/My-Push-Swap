@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 18:17:23 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/10/31 10:15:37 by wiljimen         ###   ########.fr       */
+/*   Updated: 2024/12/12 12:48:13 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void sort_aux(t_list **stack_a, t_list **stack_b, int index, int num)
 	else if (i == 2)
 		rotate(stack_a, 'a');
 	else if (i == 3)
-		rev_rotate(stack_a 'a');
+		rev_rotate(stack_a, 'a');
 	else if (i == 4)
 	{
 		rev_rotate(stack_a, 'a');

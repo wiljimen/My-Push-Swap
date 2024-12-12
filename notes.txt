@@ -7,3 +7,5 @@ Pasos para SWAP:
 - Crear ambos stacks y almacenar cosas.
 - Asignar un número a cada argumento, osea, indexarlo.
 - Ordenar (programar los movimientos antes de) y ver resultado, mostrar en pantalla el ordenamiento. (pa, rb, rr, pb, ra... blablabla).
+
+ARREGLAR EL SQRT

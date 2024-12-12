@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 19:26:41 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/11/14 14:13:03 by wiljimen         ###   ########.fr       */
+/*   Updated: 2024/12/12 13:14:25 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,7 @@ void	great_sort_aux(t_list **stack_a, t_list **stack_b, int num)
 		if ((*stack_a)->index <= i)
 		{
 			push(stack_a, stack_b, 'b');
-			if (ft_lstsize(*stack_b) > 1)
-				rotate(stack_b, 'b');
+			rotate(stack_b, 'b');
 			i++;
 		}
 		else if ((*stack_a)->index <= i + range)
@@ -60,7 +59,7 @@ void	great_sort(t_list **stack_a, t_list **stack_b, int num)
 	while (num - 1 >= 0)
 	{
 		rb_count = count_rotations(*stack_b, (num - 1));
-		rev_rb_count = num  - rb_count;
+		rev_rb_count = num - rb_count;
 		if (rb_count <= rev_rb_count)
 		{
 			while ((*stack_b)->index != num - 1)
