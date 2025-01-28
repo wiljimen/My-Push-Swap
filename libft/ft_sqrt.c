@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 18:51:05 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/12/12 13:38:58 by wiljimen         ###   ########.fr       */
+/*   Updated: 2025/01/28 17:49:24 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ int	ft_sqrt(int number)
 {
 	int	i;
 
-	if (number > 4)
+	if (number < 4)
 		return (1);
 	i = 2;
 	while (i * i < number)
 		i++;
 	if (i * i > number)
 	{
-		if ((i * i - number) < ((i - 1) * (i -1) + (-number)))
+		if ((i * i - number) < ((i - 1) * (i - 1) + (-number)))
 			return (i);
 	}
 	return (i - 1);
