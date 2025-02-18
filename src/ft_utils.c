@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 15:15:04 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/11/14 14:21:49 by wiljimen         ###   ########.fr       */
+/*   Updated: 2025/02/18 19:26:17 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,6 @@ void	print_error(char *str)
 	exit(EXIT_FAILURE);
 }
 
-void	print_success(char *str)
-{
-	ft_printf(str);
-	exit(EXIT_FAILURE);
-}
-
 void	print_list(t_list **lst, char c)
 {
 	t_list	*current;
@@ -57,6 +51,25 @@ void	print_list(t_list **lst, char c)
 	}
 	ft_printf("\n");
 }
+
+int	ft_lstadd_back_aux(t_list **lst, t_list *new)
+{
+	t_list	*temp;
+
+	if (!lst || !new)
+		return (0);
+	if (!*lst)
+	{
+		*lst = new;
+		return (1);
+	}
+	temp = *lst;
+	while (temp->next)
+		temp = temp->next;
+	temp->next = new;
+	return (1);
+}
+
 
 void	get_min_index(t_list **stack)
 {

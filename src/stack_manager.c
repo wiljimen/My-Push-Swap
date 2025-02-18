@@ -6,42 +6,13 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 16:48:34 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/11/14 14:37:54 by wiljimen         ###   ########.fr       */
+/*   Updated: 2025/02/18 19:24:34 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-
-// void	stack_creator(char *argv, t_list **stack_a)
-// {
-// 	int		i;
-// 	char	**split_arg;
-// 	long	n;
-// 	t_list	*node;
-// 	int		*num;
-
-// 	i = 0;
-// 	split_arg = ft_split(argv, ' ');
-// 	n = ft_atol(split_arg[i]);
-// 	while(split_arg[i])
-// 	{
-// 		if (!n)
-// 			ft_free(split_arg, "Balloc");
-// 		num = malloc(sizeof(int));
-// 		n = control_long(n, split_arg[i]);
-// 		*num = (int)n;
-// 		node = ft_lstnew(num);
-// 		if (!node)
-// 			ft_free(split_arg, "Bad node");
-// 		ft_lstadd_back(stack_a, node);
-// 		ft_printf("Numero en nodo:%d\n", *(int *)(*stack_a)->content);
-// 		free(split_arg[i]);
-// 		i++;
-// 	}
-// 	free(split_arg);
-// }
-void	free_all(char **argv, t_list **stack, char *str)
+void	free_all(char **argv, t_list **stack)
 {
 	int	i;
 
@@ -54,7 +25,6 @@ void	free_all(char **argv, t_list **stack, char *str)
 	free(argv);
 	if (stack && *stack)
 		ft_lstclear(stack, free);
-	ft_putstr_fd(str, 1);
 	exit(EXIT_FAILURE);
 }
 
@@ -65,18 +35,20 @@ void	node_to_stack(t_list **stack_a, int number, char **split_arg)
 
 	num = malloc(sizeof(int));
 	if (!num)
-	{
-		free(num);
-		free_all(split_arg, stack_a, "Error num");
-	}
+		free_all(split_arg, stack_a);
 	*num = number;
 	node = ft_lstnew(num);
 	if (!node)
 	{
 		free(num);
-		free_all(split_arg, stack_a, "Bad node");
+		free_all(split_arg, stack_a);
 	}
-	ft_lstadd_back(stack_a, node);
+	if (!ft_lstadd_back_aux(stack_a, node))
+	{
+		free(num);
+		free(node);
+		free_all(split_arg, stack_a);	
+	}
 }
 
 void	stack_creator(char *argv, t_list **stack_a)
@@ -88,7 +60,7 @@ void	stack_creator(char *argv, t_list **stack_a)
 	i = 0;
 	split_arg = ft_split(argv, ' ');
 	if (!split_arg)
-		free_all(NULL, stack_a, "Error split_arg");
+		free_all(NULL, stack_a);
 	while (split_arg[i])
 	{
 		n = ft_atol(split_arg[i]);

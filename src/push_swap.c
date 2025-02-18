@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 15:51:23 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/12/12 12:49:29 by wiljimen         ###   ########.fr       */
+/*   Updated: 2025/02/18 19:27:25 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,19 @@ void	check_args(int argc, char **argv)
 	}
 }
 
+void	free_stack(t_list **stack)
+{
+	t_list *tmp;
+
+	while (*stack)
+	{
+		tmp = *stack;
+		*stack = (*stack)->next;
+		free(tmp->content);
+		free(tmp);
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
@@ -60,5 +73,7 @@ int	main(int argc, char **argv)
 	else
 		return (0);
 	principal_sort(&stack_a, &stack_b);
+	free_stack(&stack_a);
+	free_stack(&stack_b);
 	return (0);
 }

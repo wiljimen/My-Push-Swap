@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 18:17:23 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/12/12 12:48:13 by wiljimen         ###   ########.fr       */
+/*   Updated: 2025/02/18 19:41:26 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ int	is_stack_sorted(t_list **stack)
 	return (1);
 }
 
+
+// TIENES QUE ARREGLAR LOS NUMEROS MAS PEQUEÑOS
+// PORFABOL
 void sort_aux(t_list **stack_a, t_list **stack_b, int index, int num)
 {
 	t_list	*temp;

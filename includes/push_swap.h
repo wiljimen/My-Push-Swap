@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 14:52:22 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/11/14 14:34:52 by wiljimen         ###   ########.fr       */
+/*   Updated: 2025/02/18 19:26:26 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,20 @@ typedef struct s_stack
 void	node_to_stack(t_list **stack_a, int number, char **split_arg);
 void	stack_creator(char *argv, t_list **stack_a);
 void	stack_init(int argc, char **argv, t_list **stack_a);
-void	print_list(t_list **lst, char c);
-void	print_list_index(t_list **list);
 void	free_stack(t_list **stack);
+int		ft_lstadd_back_aux(t_list **lst, t_list *new);
 
 // PARSE
 
 void	check_args(int argc, char **argv);
-void	print_error(char *str);
 void	free_arr(char **map, char *str);
-void	free_all(char **argv, t_list **stack, char *str);
+void	free_all(char **argv, t_list **stack);
 void	overflow_check(long n);
 int		ft_isspace(int c);
 long	control_long(long n, char *split_arg);
 bool	has_duplicates(int argc, char **argv);
-void	print_success(char *str);
+void	print_error(char *str);
+void	print_list(t_list **lst, char c);
 
 // MOVES
 
