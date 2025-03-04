@@ -6,11 +6,25 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 19:26:41 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/12/12 13:14:25 by wiljimen         ###   ########.fr       */
+/*   Updated: 2025/03/04 19:51:57 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+int	is_stack_sorted(t_list **stack)
+{
+	t_list	*node;
+
+	node = *stack;
+	while (node && node->next)
+	{
+		if (*(int *)node->content > *(int *)node->next->content)
+			return (0);
+		node = node->next;
+	}
+	return (1);
+}
 
 int	count_rotations(t_list *stack, int max_index)
 {
