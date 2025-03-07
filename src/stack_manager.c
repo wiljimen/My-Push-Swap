@@ -72,19 +72,6 @@ void	stack_creator(char *argv, t_list **stack_a)
 	free(split_arg);
 }
 
-void	print_list_index(t_list **list)
-{
-    t_list *current;
-	
-	current = *list;
-    while (current != NULL)
-    {
-        ft_printf("Index: %d\n", current->index);
-        current = current->next;
-    }
-}
-
-
 void	stack_init(int argc, char **argv, t_list **stack_a)
 {
 	int	i;

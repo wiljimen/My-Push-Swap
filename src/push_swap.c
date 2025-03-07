@@ -12,6 +12,18 @@
 
 #include "../includes/push_swap.h"
 
+void	print_list_index(t_list **list)
+{
+    t_list *current;
+	
+	current = *list;
+    while (current != NULL)
+    {
+        ft_printf("Index: %d\n", current->index);
+        current = current->next;
+    }
+}
+
 int	ft_isspace(int c)
 {
 	if (c == ' ' || c == '\f' || c == '\n' || c == '\r'
