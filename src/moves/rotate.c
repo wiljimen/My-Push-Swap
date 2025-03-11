@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 17:14:55 by wiljimen          #+#    #+#             */
-/*   Updated: 2025/03/11 20:02:36 by wiljimen         ###   ########.fr       */
+/*   Updated: 2025/03/11 20:18:42 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	rotate(t_list **stack, char c)
 	t_list	*second;
 
 	if (!stack || !*stack || !(*stack)->next)
-        return;
+		return ;
 	first = *stack;
 	second = (*stack)->next;
 	ft_lstadd_back(stack, first);
@@ -41,13 +41,13 @@ void	rev_rotate(t_list **stack, char c)
 	t_list	*first;
 	t_list	*last_node;
 	t_list	*pre_last_node;
-	
+
 	if (!stack || !*stack || !(*stack)->next)
-        return;
+		return ;
 	first = *stack;
 	last_node = ft_lstlast(first);
 	pre_last_node = first;
-	while(pre_last_node->next->next)
+	while (pre_last_node->next->next)
 		pre_last_node = pre_last_node->next;
 	ft_lstadd_front(stack, last_node);
 	pre_last_node->next = NULL;

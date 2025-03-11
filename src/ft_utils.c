@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 15:15:04 by wiljimen          #+#    #+#             */
-/*   Updated: 2025/02/18 19:26:17 by wiljimen         ###   ########.fr       */
+/*   Updated: 2025/03/11 20:10:46 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	print_list(t_list **lst, char c)
 	current = *lst;
 	while (current != NULL)
 	{
-		ft_printf("%d\n", *(int*)current->content);
+		ft_printf("%d\n", *(int *)current->content);
 		current = current->next;
 	}
 	ft_printf("\n");
@@ -70,7 +70,6 @@ int	ft_lstadd_back_aux(t_list **lst, t_list *new)
 	return (1);
 }
 
-
 void	get_min_index(t_list **stack)
 {
 	t_list	*current;
@@ -82,7 +81,7 @@ void	get_min_index(t_list **stack)
 	{
 		tmp = *stack;
 		min_index = 0;
-		while(tmp)
+		while (tmp)
 		{
 			if (*(int *)current->content > *(int *)tmp->content)
 				min_index++;

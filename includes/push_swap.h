@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 14:52:22 by wiljimen          #+#    #+#             */
-/*   Updated: 2025/03/11 20:03:14 by wiljimen         ###   ########.fr       */
+/*   Updated: 2025/03/11 20:08:56 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ typedef struct s_stack
 {
 	t_list	**stack_b;
 	t_list	**stack_a;
-	
 }			t_stack;
 
 // STACKS

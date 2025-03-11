@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 19:26:41 by wiljimen          #+#    #+#             */
-/*   Updated: 2025/03/11 20:06:05 by wiljimen         ###   ########.fr       */
+/*   Updated: 2025/03/11 20:13:00 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	is_stack_sorted(t_list **stack)
 int	count_rotations(t_list *stack, int max_index)
 {
 	int	i;
-	
+
 	i = 0;
 	while (stack && stack->index != max_index)
 	{
@@ -46,7 +46,7 @@ void	great_sort_aux(t_list **stack_a, t_list **stack_b, int num)
 
 	i = 0;
 	range = ft_sqrt(num) * 7 / 5;
-	while(*stack_a)
+	while (*stack_a)
 	{
 		if ((*stack_a)->index <= i)
 		{

@@ -6,15 +6,13 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 18:17:23 by wiljimen          #+#    #+#             */
-/*   Updated: 2025/03/11 20:03:58 by wiljimen         ###   ########.fr       */
+/*   Updated: 2025/03/11 20:14:48 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-// TIENES QUE ARREGLAR LOS NUMEROS MAS PEQUEÑOS
-// PORFABOL
-void sort_aux(t_list **stack_a, t_list **stack_b, int index)
+void	sort_aux(t_list **stack_a, t_list **stack_b, int index)
 {
 	t_list	*temp;
 	int		i;
@@ -39,10 +37,13 @@ void sort_aux(t_list **stack_a, t_list **stack_b, int index)
 
 void	sort_three_num(t_list **stack)
 {
-	int f = *(int *)(*stack)->content;
-	int s = *(int *)(*stack)->next->content;
-	int t = *(int *)(*stack)->next->next->content;
+	int	f;
+	int	s;
+	int	t;
 
+	f = *(int *)(*stack)->content;
+	s = *(int *)(*stack)->next->content;
+	t = *(int *)(*stack)->next->next->content;
 	if (f > s && s < t && t > f)
 		swap(stack, 'a');
 	else if (f > s && s > t)
@@ -60,8 +61,6 @@ void	sort_three_num(t_list **stack)
 	else if (f < s && s > t && t < f)
 		rev_rotate(stack, 'a');
 }
-
-
 
 void	sort_four_num(t_list **stack_a, t_list **stack_b)
 {

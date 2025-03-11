@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 17:21:05 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/10/24 17:09:38 by wiljimen         ###   ########.fr       */
+/*   Updated: 2025/03/11 20:19:13 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	swap(t_list **stack, char c)
 	t_list	*second;
 
 	if (!*stack || (*stack)->next == NULL)
-		return;
+		return ;
 	first = *stack;
 	second = (*stack)->next;
 	first->next = second->next;

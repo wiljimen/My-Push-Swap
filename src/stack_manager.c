@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 16:48:34 by wiljimen          #+#    #+#             */
-/*   Updated: 2025/02/18 19:24:34 by wiljimen         ###   ########.fr       */
+/*   Updated: 2025/03/11 20:15:45 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	node_to_stack(t_list **stack_a, int number, char **split_arg)
 	{
 		free(num);
 		free(node);
-		free_all(split_arg, stack_a);	
+		free_all(split_arg, stack_a);
 	}
 }
 
@@ -75,7 +75,7 @@ void	stack_creator(char *argv, t_list **stack_a)
 void	stack_init(int argc, char **argv, t_list **stack_a)
 {
 	int	i;
-	
+
 	i = 1;
 	while (i < argc)
 	{
@@ -87,6 +87,7 @@ void	stack_init(int argc, char **argv, t_list **stack_a)
 void	principal_sort(t_list **stack_a, t_list **stack_b)
 {
 	int	num;
+
 	num = ft_lstsize(*stack_a);
 	get_min_index(stack_a);
 	if (!is_stack_sorted(stack_a))
@@ -103,4 +104,3 @@ void	principal_sort(t_list **stack_a, t_list **stack_b)
 			great_sort(stack_a, stack_b, num);
 	}
 }
-
