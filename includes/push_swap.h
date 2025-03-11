@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 14:52:22 by wiljimen          #+#    #+#             */
-/*   Updated: 2025/03/04 19:56:59 by wiljimen         ###   ########.fr       */
+/*   Updated: 2025/03/11 20:03:14 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,8 @@ void	print_list(t_list **lst, char c);
 
 // MOVES
 
-void	push(t_list **stack_from, t_list **stack_dst, char c);
+void	push_a(t_list **stack_from, t_list **stack_dst);
+void	push_b(t_list **stack_from, t_list **stack_dst);
 void	swap(t_list **stack, char c);
 void	rotate(t_list **stack, char c);
 void	rev_rotate(t_list **stack, char c);

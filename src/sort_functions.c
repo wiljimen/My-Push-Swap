@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 18:17:23 by wiljimen          #+#    #+#             */
-/*   Updated: 2025/03/04 20:07:03 by wiljimen         ###   ########.fr       */
+/*   Updated: 2025/03/11 20:03:58 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void sort_aux(t_list **stack_a, t_list **stack_b, int index)
 	else
 		while (i++ < size)
 			rev_rotate(stack_a, 'a');
-	push(stack_a, stack_b, 'b');
+	push_b(stack_a, stack_b);
 }
 
 void	sort_three_num(t_list **stack)
@@ -67,7 +67,7 @@ void	sort_four_num(t_list **stack_a, t_list **stack_b)
 {
 	sort_aux(stack_a, stack_b, 0);
 	sort_three_num(stack_a);
-	push(stack_b, stack_a, 'a');
+	push_a(stack_b, stack_a);
 }
 
 void	sort_five_num(t_list **stack_a, t_list **stack_b)
@@ -75,6 +75,6 @@ void	sort_five_num(t_list **stack_a, t_list **stack_b)
 	sort_aux(stack_a, stack_b, 0);
 	sort_aux(stack_a, stack_b, 1);
 	sort_three_num(stack_a);
-	push(stack_b, stack_a, 'a');
-	push(stack_b, stack_a, 'a');
+	push_a(stack_b, stack_a);
+	push_a(stack_b, stack_a);
 }

@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 15:51:23 by wiljimen          #+#    #+#             */
-/*   Updated: 2025/03/04 19:57:20 by wiljimen         ###   ########.fr       */
+/*   Updated: 2025/03/11 19:57:23 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,11 +80,13 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	check_args(argc, argv);
+	// print_list(&stack_a, 'a');
 	if (argc > 2)
 		stack_init(argc, argv, &stack_a);
 	else
 		return (0);
 	principal_sort(&stack_a, &stack_b);
+	// print_list(&stack_a, 'a');
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);

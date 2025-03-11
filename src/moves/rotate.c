@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 17:14:55 by wiljimen          #+#    #+#             */
-/*   Updated: 2024/10/24 18:06:18 by wiljimen         ###   ########.fr       */
+/*   Updated: 2025/03/11 20:02:36 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ void	rotate(t_list **stack, char c)
 	first->next = NULL;
 	*stack = second;
 	if (c == 'a')
-		ft_printf("ra\n");
+		ft_putendl_fd("ra", 1);
 	else if (c == 'b')
-		ft_printf("rb\n");
+		ft_putendl_fd("rb", 1);
 }
 
 void	rotate_r(t_list **stack_a, t_list **stack_b)
@@ -52,14 +52,14 @@ void	rev_rotate(t_list **stack, char c)
 	ft_lstadd_front(stack, last_node);
 	pre_last_node->next = NULL;
 	if (c == 'a')
-		ft_printf("rra\n");
+		ft_putendl_fd("rra", 1);
 	else if (c == 'b')
-		ft_printf("rrb\n");
+		ft_putendl_fd("rrb", 1);
 }
 
 void	rev_rr(t_list **stack_a, t_list **stack_b)
 {
 	rev_rotate(stack_a, 'c');
 	rev_rotate(stack_b, 'c');
-	ft_printf("rrr\n");
+	ft_putendl_fd("rrr", 1);
 }

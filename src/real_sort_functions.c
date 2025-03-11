@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 19:26:41 by wiljimen          #+#    #+#             */
-/*   Updated: 2025/03/04 19:51:57 by wiljimen         ###   ########.fr       */
+/*   Updated: 2025/03/11 20:06:05 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,13 @@ void	great_sort_aux(t_list **stack_a, t_list **stack_b, int num)
 	{
 		if ((*stack_a)->index <= i)
 		{
-			push(stack_a, stack_b, 'b');
+			push_b(stack_a, stack_b);
 			rotate(stack_b, 'b');
 			i++;
 		}
 		else if ((*stack_a)->index <= i + range)
 		{
-			push(stack_a, stack_b, 'b');
+			push_b(stack_a, stack_b);
 			i++;
 		}
 		else
@@ -78,14 +78,14 @@ void	great_sort(t_list **stack_a, t_list **stack_b, int num)
 		{
 			while ((*stack_b)->index != num - 1)
 				rotate(stack_b, 'b');
-			push(stack_b, stack_a, 'a');
+			push_a(stack_b, stack_a);
 			num--;
 		}
 		else
 		{
 			while ((*stack_b)->index != num - 1)
 				rev_rotate(stack_b, 'b');
-			push(stack_b, stack_a, 'a');
+			push_a(stack_b, stack_a);
 			num--;
 		}
 	}
