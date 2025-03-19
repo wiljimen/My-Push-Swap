@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 15:51:23 by wiljimen          #+#    #+#             */
-/*   Updated: 2025/03/11 20:12:09 by wiljimen         ###   ########.fr       */
+/*   Updated: 2025/03/19 15:28:22 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ void	check_args(int argc, char **argv)
 
 	i = 1;
 	if (argc < 2 || argv[1][0] == '\0')
-		print_error("Invalid arguments");
+		exit(EXIT_FAILURE);
 	if (has_duplicates(argc, argv))
-		print_error("Error: Duplicated number");
+		print_error("Error");
 	while (i < argc)
 	{
 		j = 0;
@@ -53,7 +53,7 @@ void	check_args(int argc, char **argv)
 			else if (ft_isdigit(argv[i][j]) || ft_isspace(argv[i][j]))
 				j++;
 			else
-				print_error("Error\n");
+				print_error("Error");
 		}
 		i++;
 	}
@@ -80,7 +80,7 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	check_args(argc, argv);
-	if (argc > 2)
+	if (argc >= 2)
 		stack_init(argc, argv, &stack_a);
 	else
 		return (0);

@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 19:26:41 by wiljimen          #+#    #+#             */
-/*   Updated: 2025/03/11 20:13:00 by wiljimen         ###   ########.fr       */
+/*   Updated: 2025/03/19 15:06:58 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	is_stack_sorted(t_list **stack)
 int	count_rotations(t_list *stack, int max_index)
 {
 	int	i;
-
+	
 	i = 0;
 	while (stack && stack->index != max_index)
 	{
@@ -46,17 +46,17 @@ void	great_sort_aux(t_list **stack_a, t_list **stack_b, int num)
 
 	i = 0;
 	range = ft_sqrt(num) * 7 / 5;
-	while (*stack_a)
+	while(*stack_a)
 	{
 		if ((*stack_a)->index <= i)
 		{
-			push_b(stack_a, stack_b);
+			push(stack_a, stack_b, 'b');
 			rotate(stack_b, 'b');
 			i++;
 		}
 		else if ((*stack_a)->index <= i + range)
 		{
-			push_b(stack_a, stack_b);
+			push(stack_a, stack_b, 'b');
 			i++;
 		}
 		else
@@ -78,14 +78,14 @@ void	great_sort(t_list **stack_a, t_list **stack_b, int num)
 		{
 			while ((*stack_b)->index != num - 1)
 				rotate(stack_b, 'b');
-			push_a(stack_b, stack_a);
+			push(stack_b, stack_a, 'a');
 			num--;
 		}
 		else
 		{
 			while ((*stack_b)->index != num - 1)
 				rev_rotate(stack_b, 'b');
-			push_a(stack_b, stack_a);
+			push(stack_b, stack_a, 'a');
 			num--;
 		}
 	}

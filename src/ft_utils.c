@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 15:15:04 by wiljimen          #+#    #+#             */
-/*   Updated: 2025/03/11 20:10:46 by wiljimen         ###   ########.fr       */
+/*   Updated: 2025/03/19 14:45:18 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	free_arr(char **argv, char *str)
 
 void	print_error(char *str)
 {
-	ft_printf(str);
+	ft_putendl_fd(str, 2);
 	exit(EXIT_FAILURE);
 }
 
